@@ -1,0 +1,58 @@
+@mixin clearfix {
+  &::after{
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+
+@mixin center_horizontal_vertical {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+// MEDIA QUERY MANAGER
+/*
+0 - 600Ppx:       Phone                     -> max width
+600 - 900px:      Tablet portrait           -> max width
+900 - 1200px:     Tablet landscape          -> max width
+1200 - 1800px:    where normal style goes
+1800px +:         Big desktop               -> min  width
+
+$breakpoint argument choice
+- phone
+- tab-port
+- tab-lands
+- big-desktop
+
+Order : Base + typography > general layout + grid > components
+
+1em = 16px
+*/
+
+
+@mixin respond($breakpoint) {
+  @if($breakpoint == 'phone') {
+    @media only screen and (max-width: 37.5em ) { @content }; // (600px/16px)*1em
+  }
+
+  @if($breakpoint == 'tab-port') {
+    @media only screen and (max-width: 56.25em) { @content }; // (900px/16px)*1em
+  }
+
+  @if($breakpoint == 'tab-land') {
+    @media only screen and (max-width: 75em) { @content }; //(1200px/16px)*1em
+  }
+
+  @if($breakpoint == 'big-desktop') {
+    @media only screen and (min-width: (1800px/16px)*1em) { @content };
+  }
+
+}
+
+
+

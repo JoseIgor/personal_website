@@ -1,0 +1,13 @@
+.container {
+  display: grid;
+  max-width: 1200px;
+  margin: 0 auto;
+
+  grid-template-rows: min-content repeat(3, minmax(200px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
+
+  grid-template-areas: 'nav nav nav'
+                       'avatar intro intro'
+                       'portifolio portifolio portifolio'
+                        'footer footer footer';
+}
