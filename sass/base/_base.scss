@@ -15,5 +15,12 @@ body{
    box-sizing: border-box;
    padding: 3rem;
    background-color: #FFFFF3;
+
 }
+
+::selection{
+  color: #fff;
+  background: $color-primary;
+}
+
 
