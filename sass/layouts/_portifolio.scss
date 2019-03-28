@@ -1,13 +1,9 @@
 .portifolio {
   grid-area: portifolio;
-  margin-top: 1rem;
+  margin: 1rem 0;
 
   display: grid;
-  grid-template-rows: repeat(2, minmax(30rem,1fr));
+  grid-template-rows: repeat(2, 1fr);
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 1rem;
-
-  &__work {
-    background-color: $color-primary-light-1;
-  }
 }

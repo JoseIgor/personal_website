@@ -3,7 +3,7 @@
   display: flex;
   align-items: center;
   padding: 3rem 1rem;
-  border-bottom:5px solid $color-primary-dark;
+  border-bottom: 5px solid $color-primary-dark;
 }
 
 .avatar {
@@ -22,7 +22,7 @@
     height: 100%;
     transform: scale(1.1);
     filter: grayscale(100%);
-    transition: all 0.5s;
+    transition: all 0.2s;
 
     &:hover{
       filter: grayscale(0%);

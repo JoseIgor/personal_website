@@ -132,12 +132,51 @@ body {
   transition: all 0.2s; }
 
 .btn:hover, .btn:active {
-  background-color: #8d96ab;
+  background-color: #353b48;
   color: #fff; }
 
 .btn:active {
-  transform: translateY(2px);
+  transform: translateY(1px);
   border-radius: 3px; }
+
+.card {
+  position: relative;
+  overflow: hidden; }
+  .card__photo-box {
+    display: block;
+    filter: grayscale(100%);
+    transition: all 0.2s; }
+  .card__photo {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; }
+  .card__caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 6rem;
+    transform: translateY(6rem);
+    opacity: 0.9;
+    color: #fff;
+    background-color: #1f232b;
+    padding: 0.5rem 1rem;
+    transition: all 0.4s;
+    display: flex;
+    flex-direction: column; }
+  .card:hover > .card__caption {
+    transform: translateY(0); }
+  .card:hover > .card__photo-box {
+    filter: grayscale(0); }
+  .card__project--name:link, .card__project--name:visited, .card__project--name:hover, .card__project--name:active {
+    align-self: center;
+    color: inherit;
+    text-decoration: none; }
+  .card__project--designer {
+    margin-top: auto;
+    justify-self: flex-end;
+    align-self: flex-end; }
 
 .container {
   display: grid;
@@ -193,7 +232,7 @@ body {
     height: 100%;
     transform: scale(1.1);
     filter: grayscale(100%);
-    transition: all 0.5s; }
+    transition: all 0.2s; }
     .avatar__photo:hover {
       filter: grayscale(0%); }
 
@@ -207,13 +246,11 @@ body {
 
 .portifolio {
   grid-area: portifolio;
-  margin-top: 1rem;
+  margin: 1rem 0;
   display: grid;
-  grid-template-rows: repeat(2, minmax(30rem, 1fr));
+  grid-template-rows: repeat(2, 1fr);
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 1rem; }
-  .portifolio__work {
-    background-color: #8d96ab; }
 
 .footer {
   background-color: yellowgreen;

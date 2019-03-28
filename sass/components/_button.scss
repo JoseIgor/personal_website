@@ -14,12 +14,12 @@
 
   &:hover,
   &:active {
-    background-color: $color-primary-light-1;
+    background-color: $color-primary;
     color: $color-white;
   }
 
   &:active {
-    transform: translateY(2px);
+    transform: translateY(1px);
     border-radius: 3px;
   }
 }
