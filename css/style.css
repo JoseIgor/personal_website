@@ -200,7 +200,7 @@ body {
   margin: 0 auto;
   grid-template-rows: repeat(3, min-content);
   grid-template-columns: 1fr;
-  grid-template-areas: 'nav' 'intro' 'portifolio' 'footer'; }
+  grid-template-areas: 'nav' 'main' 'footer'; }
 
 .navigation {
   background-color: transparent;
@@ -210,8 +210,8 @@ body {
 
 .menu {
   list-style: none;
-  margin-top: 2rem;
-  margin-bottom: 2rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
   display: flex;
   justify-content: center; }
   .menu__link:link, .menu__link:visited {
@@ -230,10 +230,10 @@ body {
 
 .intro {
   grid-area: intro;
-  display: flex;
-  align-items: center;
   padding: 3rem 1rem;
-  border-bottom: 5px solid #1f232b; }
+  border-bottom: 5px solid #1f232b;
+  display: flex;
+  align-items: center; }
   .intro .avatar {
     overflow: hidden;
     flex-basis: 30%;
@@ -305,3 +305,10 @@ body {
       content: "";
       border-bottom: 1px solid black;
       flex: 1; }
+
+.home {
+  grid-area: main;
+  display: grid;
+  grid-template-rows: repeat(2, min-content);
+  grid-template-columns: 1fr;
+  grid-template-areas: 'intro' 'portifolio'; }
