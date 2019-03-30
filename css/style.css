@@ -194,6 +194,11 @@ body {
     stroke: red;
     fill: red; }
 
+.bar-level {
+  width: 100%;
+  height: 3rem;
+  background-image: linear-gradient(135deg, #1f232b 80%, #8d96ab 80%); }
+
 .container {
   display: grid;
   max-width: 1000px;
@@ -312,3 +317,46 @@ body {
   grid-template-rows: repeat(2, min-content);
   grid-template-columns: 1fr;
   grid-template-areas: 'intro' 'portifolio'; }
+
+.about {
+  grid-area: main;
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: 'intro skill'; }
+  .about .presentation {
+    border-right: 1px solid #1f232b; }
+  .about .skills {
+    margin: 1rem 1rem; }
+    .about .skills > p {
+      text-align: center;
+      text-transform: uppercase;
+      margin-bottom: 2rem; }
+  .about .skill {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2rem; }
+    .about .skill__tag {
+      flex-basis: 20%;
+      display: flex;
+      justify-content: flex-end;
+      margin-right: 1rem; }
+    .about .skill__level {
+      flex: 1;
+      height: 2.5rem;
+      border-radius: 4rem; }
+      .about .skill__level--html {
+        background-image: linear-gradient(135deg, #1f232b 90%, #8d96ab 90%); }
+      .about .skill__level--css {
+        background-image: linear-gradient(135deg, #1f232b 90%, #8d96ab 90%); }
+      .about .skill__level--javascript {
+        background-image: linear-gradient(135deg, #1f232b 60%, #8d96ab 60%); }
+      .about .skill__level--react {
+        background-image: linear-gradient(135deg, #1f232b 50%, #8d96ab 50%); }
+      .about .skill__level--nodejs {
+        background-image: linear-gradient(135deg, #1f232b 20%, #8d96ab 20%); }
+      .about .skill__level--mongodb {
+        background-image: linear-gradient(135deg, #1f232b 30%, #8d96ab 30%); }
+      .about .skill__level--git {
+        background-image: linear-gradient(135deg, #1f232b 90%, #8d96ab 90%); }
