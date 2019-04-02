@@ -35,6 +35,16 @@ body {
   background: #353b48; }
 
 /* ANIMATIONS */
+@keyframes dropDown {
+  0% {
+    opacity: 1;
+    transform: translateX(-10rem); }
+  80% {
+    transform: translateX(1rem); }
+  100% {
+    opacity: 1;
+    transform: translateX(0); } }
+
 @keyframes moveInLeft {
   0% {
     opacity: 0;
@@ -194,10 +204,83 @@ body {
     stroke: red;
     fill: red; }
 
-.bar-level {
-  width: 100%;
-  height: 3rem;
-  background-image: linear-gradient(135deg, #1f232b 80%, #8d96ab 80%); }
+.skill__group {
+  margin: 1rem 1rem; }
+  .skill__group > p {
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 2rem; }
+
+.skill {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2rem; }
+  .skill__tag {
+    flex-basis: 20%;
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 1rem; }
+  .skill__level {
+    flex: 1;
+    height: 2.5rem;
+    border-radius: 4rem;
+    position: relative; }
+    .skill__level--html {
+      background-image: linear-gradient(135deg, #1f232b 90%, #8d96ab 90%); }
+    .skill__level--css {
+      background-image: linear-gradient(135deg, #1f232b 90%, #8d96ab 90%); }
+    .skill__level--javascript {
+      background-image: linear-gradient(135deg, #1f232b 60%, #8d96ab 60%); }
+    .skill__level--react {
+      background-image: linear-gradient(135deg, #1f232b 50%, #8d96ab 50%); }
+    .skill__level--nodejs {
+      background-image: linear-gradient(135deg, #1f232b 20%, #8d96ab 20%); }
+    .skill__level--mongodb {
+      background-image: linear-gradient(135deg, #1f232b 30%, #8d96ab 30%); }
+    .skill__level--git {
+      background-image: linear-gradient(135deg, #1f232b 90%, #8d96ab 90%); }
+  .skill__popup {
+    position: absolute;
+    background-image: linear-gradient(to bottom right, #1f232b, #353b48);
+    width: 100%;
+    height: 0;
+    color: #fff;
+    border-radius: 10px;
+    top: 0%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    opacity: 0;
+    z-index: -10;
+    cursor: pointer;
+    transition: all 0.6s;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center; }
+    .skill__popup ul {
+      list-style: none;
+      width: 100%;
+      padding: 0 0.5rem; }
+    .skill__popup ul li a:link,
+    .skill__popup ul li a:hover,
+    .skill__popup ul li a:visited,
+    .skill__popup ul li a:active {
+      display: inline-block;
+      width: 100%;
+      text-decoration: none;
+      color: inherit;
+      text-align: center;
+      border-radius: 5px; }
+    .skill__popup ul li a:hover,
+    .skill__popup ul li a:active {
+      color: #353b48;
+      background-color: #fff; }
+  .skill__level:hover .skill__popup,
+  .skill__level--html:hover .skill__popup, .skill__popup:hover {
+    opacity: 1;
+    z-index: 10;
+    height: 12rem; }
 
 .container {
   display: grid;
@@ -326,37 +409,3 @@ body {
   grid-template-areas: 'intro skill'; }
   .about .presentation {
     border-right: 1px solid #1f232b; }
-  .about .skills {
-    margin: 1rem 1rem; }
-    .about .skills > p {
-      text-align: center;
-      text-transform: uppercase;
-      margin-bottom: 2rem; }
-  .about .skill {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 2rem; }
-    .about .skill__tag {
-      flex-basis: 20%;
-      display: flex;
-      justify-content: flex-end;
-      margin-right: 1rem; }
-    .about .skill__level {
-      flex: 1;
-      height: 2.5rem;
-      border-radius: 4rem; }
-      .about .skill__level--html {
-        background-image: linear-gradient(135deg, #1f232b 90%, #8d96ab 90%); }
-      .about .skill__level--css {
-        background-image: linear-gradient(135deg, #1f232b 90%, #8d96ab 90%); }
-      .about .skill__level--javascript {
-        background-image: linear-gradient(135deg, #1f232b 60%, #8d96ab 60%); }
-      .about .skill__level--react {
-        background-image: linear-gradient(135deg, #1f232b 50%, #8d96ab 50%); }
-      .about .skill__level--nodejs {
-        background-image: linear-gradient(135deg, #1f232b 20%, #8d96ab 20%); }
-      .about .skill__level--mongodb {
-        background-image: linear-gradient(135deg, #1f232b 30%, #8d96ab 30%); }
-      .about .skill__level--git {
-        background-image: linear-gradient(135deg, #1f232b 90%, #8d96ab 90%); }
