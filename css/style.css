@@ -215,7 +215,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 2rem; }
+  margin-bottom: 3rem; }
   .skill__tag {
     flex-basis: 20%;
     display: flex;
@@ -226,25 +226,12 @@ body {
     height: 2.5rem;
     border-radius: 4rem;
     position: relative; }
-    .skill__level--html {
-      background-image: linear-gradient(135deg, #1f232b 90%, #8d96ab 90%); }
-    .skill__level--css {
-      background-image: linear-gradient(135deg, #1f232b 90%, #8d96ab 90%); }
-    .skill__level--javascript {
-      background-image: linear-gradient(135deg, #1f232b 60%, #8d96ab 60%); }
-    .skill__level--react {
-      background-image: linear-gradient(135deg, #1f232b 50%, #8d96ab 50%); }
-    .skill__level--nodejs {
-      background-image: linear-gradient(135deg, #1f232b 20%, #8d96ab 20%); }
-    .skill__level--mongodb {
-      background-image: linear-gradient(135deg, #1f232b 30%, #8d96ab 30%); }
-    .skill__level--git {
-      background-image: linear-gradient(135deg, #1f232b 90%, #8d96ab 90%); }
   .skill__popup {
     position: absolute;
     background-image: linear-gradient(to bottom right, #1f232b, #353b48);
     width: 100%;
-    height: 0;
+    height: auto;
+    max-height: 0;
     color: #fff;
     border-radius: 10px;
     top: 0%;
@@ -252,8 +239,7 @@ body {
     transform: translate(-50%, 0);
     opacity: 0;
     z-index: -10;
-    cursor: pointer;
-    transition: all 0.6s;
+    transition: all 0.7s;
     display: flex;
     flex-flow: column;
     justify-content: center;
@@ -261,26 +247,22 @@ body {
     .skill__popup ul {
       list-style: none;
       width: 100%;
-      padding: 0 0.5rem; }
-    .skill__popup ul li a:link,
-    .skill__popup ul li a:hover,
-    .skill__popup ul li a:visited,
-    .skill__popup ul li a:active {
+      padding: 0.5rem 0.5rem; }
+    .skill__popup-item:link, .skill__popup-item:hover, .skill__popup-item:visited, .skill__popup-item:active {
       display: inline-block;
       width: 100%;
       text-decoration: none;
       color: inherit;
       text-align: center;
-      border-radius: 5px; }
-    .skill__popup ul li a:hover,
-    .skill__popup ul li a:active {
+      border-radius: 5px;
+      cursor: pointer; }
+    .skill__popup-item:hover, .skill__popup-item:active {
       color: #353b48;
       background-color: #fff; }
-  .skill__level:hover .skill__popup,
-  .skill__level--html:hover .skill__popup, .skill__popup:hover {
+  .skill__level:hover .skill__popup, .skill__popup:hover {
     opacity: 1;
     z-index: 10;
-    height: 12rem; }
+    max-height: 15rem; }
 
 .container {
   display: grid;
