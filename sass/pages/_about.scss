@@ -5,7 +5,27 @@
   grid-template-columns: 1fr 1fr;
   grid-template-areas: 'intro skill';
 
-  .presentation {
-    border-right: 1px solid $color-primary-dark;
-  }
 }
+
+.presentation {
+  display: flex;
+  flex-flow: column;
+  justify-items: center;
+  align-items: center;
+  margin-right: 2rem;
+  // border-right: 1px solid $color-primary-dark;
+
+  & > p {
+    text-align: justify;
+
+    &:not(:last-of-type){
+      margin-bottom: 1rem;
+    }
+
+    &:first-of-type {
+      margin-top: 2rem;
+    }
+    
+  }
+
+} 
