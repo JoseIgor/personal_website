@@ -3,10 +3,10 @@ class Skill {
     this.name = name;
     this.level = level;
     this.projects = projects;
-    document.styleSheets[1].addRule(".skill__level--" + this.name.toLowerCase(),"background-image: linear-gradient(135deg, rgb(31, 35, 43)" + this.level.toString()+ "%, rgb(141, 150, 171)" + this.level.toString()+ "%);" , document.styleSheets[1].rules.length);
-    // document.styleSheets[1].addRule(".skill__level--" + this.name.toLowerCase(),"background-image: linear-gradient(135deg, rgb(31, 35, 43)" + this.level.toString()+ "%, rgb(141, 150, 171)" + this.level.toString()+ "%);" , document.styleSheets[1].rules.length);
-    // document.styleSheets[1].addRule(".skill__level--" + this.name.toLowerCase(),"background-image: linear-gradient(135deg, rgb(31, 35, 43)" + this.level.toString()+ "%, rgb(141, 150, 171)" + this.level.toString()+ "%);" , document.styleSheets[1].rules.length);
-    // document.styleSheets[1].addRule(".skill__level--" + this.name.toLowerCase(),"background-image: linear-gradient(135deg, rgb(31, 35, 43)" + this.level.toString()+ "%, rgb(141, 150, 171)" + this.level.toString()+ "%);" , document.styleSheets[1].rules.length);
+    document.styleSheets[1].addRule(".skill__level--" +
+      this.name.toLowerCase(),"background-image: linear-gradient(135deg, rgb(31, 35, 43)" +
+      this.level.toString()+ "%, rgb(141, 150, 171)" + this.level.toString()+ "%);" ,
+      document.styleSheets[1].rules.length);
   }
 }
 

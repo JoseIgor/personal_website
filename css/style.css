@@ -215,7 +215,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 3rem; }
+  margin-bottom: 2rem; }
   .skill__tag {
     flex-basis: 20%;
     display: flex;
@@ -255,7 +255,8 @@ body {
       color: inherit;
       text-align: center;
       border-radius: 5px;
-      cursor: pointer; }
+      cursor: pointer;
+      transition: all 0.5s; }
     .skill__popup-item:hover, .skill__popup-item:active {
       color: #353b48;
       background-color: #fff; }
@@ -263,6 +264,23 @@ body {
     opacity: 1;
     z-index: 10;
     max-height: 15rem; }
+
+.avatar {
+  overflow: hidden;
+  transition: all 0.5s; }
+  .avatar--circle {
+    width: 10rem;
+    height: 10rem;
+    border-radius: 50%; }
+  .avatar__photo {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    transform: scale(1.1);
+    filter: grayscale(100%);
+    transition: all 0.2s; }
+    .avatar__photo:hover {
+      filter: grayscale(0%); }
 
 .container {
   display: grid;
@@ -304,19 +322,8 @@ body {
   border-bottom: 5px solid #1f232b;
   display: flex;
   align-items: center; }
-  .intro .avatar {
-    overflow: hidden;
-    flex-basis: 30%;
-    transition: all 0.5s; }
-    .intro .avatar__photo {
-      display: inline-block;
-      width: 100%;
-      height: 100%;
-      transform: scale(1.1);
-      filter: grayscale(100%);
-      transition: all 0.2s; }
-      .intro .avatar__photo:hover {
-        filter: grayscale(0%); }
+  .intro__photo {
+    flex-basis: 30%; }
   .intro .personal {
     flex-basis: 70%;
     margin-left: 3rem; }
@@ -389,5 +396,16 @@ body {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-areas: 'intro skill'; }
-  .about .presentation {
-    border-right: 1px solid #1f232b; }
+
+.presentation {
+  display: flex;
+  flex-flow: column;
+  justify-items: center;
+  align-items: center;
+  margin-right: 2rem; }
+  .presentation > p {
+    text-align: justify; }
+    .presentation > p:not(:last-of-type) {
+      margin-bottom: 1rem; }
+    .presentation > p:first-of-type {
+      margin-top: 2rem; }
