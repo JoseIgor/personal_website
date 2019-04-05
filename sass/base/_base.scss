@@ -9,6 +9,10 @@
 html{
   // this defines what 1rem is
   font-size: 62.5%; // 1rem = 10px/16px = 62.5%
+
+  @include respond(bp-medium-700) {
+    font-size: 50%; // 1rem = 8px/16px = 50%
+  }
 }
 
 body{

@@ -6,6 +6,10 @@
     display: block;
     filter: grayscale(100%);
     transition: all 0.2s;
+
+    @include deviceType(smartphone) {
+      filter: grayscale(0);
+    }
   }
 
   &__photo {
@@ -30,6 +34,14 @@
 
     display: flex;
     flex-direction: column;
+
+  
+
+      @include deviceType(smartphone) {
+        transform: translateY(0);
+      }
+    
+
   }
 
   &:hover > &__photo-box{
