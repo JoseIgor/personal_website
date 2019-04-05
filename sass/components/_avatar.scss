@@ -1,7 +1,11 @@
 .avatar {
   overflow: hidden;
-
   transition: all 0.5s;
+
+  @include respond(bp-small) {
+    display: flex;
+    justify-content: center;
+  }
 
   &--circle {
     width: 10rem;
@@ -16,6 +20,22 @@
     transform: scale(1.1);
     filter: grayscale(100%);
     transition: all 0.2s;
+
+    @include deviceType(smartphone) {
+      filter: grayscale(0);
+    }
+
+    @include respond(bp-small) {
+      width: 50%;
+      height: 50%;
+      transform: scale(1);
+    }
+
+    @include respond(bp-smallest) {
+      width: 70%;
+      height: 70%;
+      transform: scale(1);
+    }
 
     &:hover{
       filter: grayscale(0%);
