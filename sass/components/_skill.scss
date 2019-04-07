@@ -1,5 +1,8 @@
 .skill__group {
     margin: 1rem 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
 
     & > p {
       text-align: center;
@@ -13,15 +16,21 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 2rem;
 
 
   &__tag {
     flex-basis: 20%;
     
     display: flex;
-    justify-content: flex-end;
-    margin-right: 1rem;
+    justify-content: flex-start;
+
+    @include respond(bp-large) {
+      flex-basis: 25%;
+    }
+
+    @include respond(bp-small) {
+      flex-basis: 25%;
+    }
   }
 
   &__level {
