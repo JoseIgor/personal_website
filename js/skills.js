@@ -37,21 +37,33 @@ var skills = [htmlSkill, cssSkill, javascriptSkill,reactSkill, nodejsSkill,
 var $ = document.querySelector('.skill__group');
 
 
-var skillsHTML = "";
 skills.forEach( (_skill) =>{
-  skillsHTML += "<div class=\"skill\">" +
-                  "<p class=\"skill__tag\">" + _skill.name + ":</p>" + 
-                  "<div class=\"skill__level skill__level--"+ _skill.name.toLowerCase() +"\">" +
-                  "<div class=\"skill__popup\">" +
-                    "<p>Projects & Courses</p>" +
-                    "<ul>";
-  for (let index = 0; index < _skill.projects.length; index++) {
-    skillsHTML +=  "<li><a href=\""+ _skill.projects[index].href +"\" class=\"skill__popup-item\" >" + _skill.projects[index].name + "</a></li>";
-  }
-  skillsHTML +=     "</ul>" +
-                  "</div>" +
-                "</div>" +
-                "</div>";
+  var skillHtml, skillMarkup, skillprojs, skillProjMarkup; 
+
+  skillMarkup = '<div class="skill">'+
+                '<p class="skill__tag">%skillName%:</p>'+
+                '<div class="skill__level skill__level--%skillNameLowercase%">'+
+                  '<div class="skill__popup">'+
+                    '<p>Projects &amp; Courses</p>'+
+                    '<ul>'+
+                      '%projects%'+
+                    '</ul>'+
+                  '</div>'+
+                '</div>'+
+              '</div>';
+
+  skillprojs = "";
+  _skill.projects.forEach( proj => {
+    skillprojs +=  '<li><a href="%#%" class="skill__popup-item">%projecName%</a></li>';
+    skillprojs =  skillprojs.replace('%#%', proj.href);
+    skillprojs =  skillprojs.replace('%projecName%', proj.name);
+  });
+
+
+  skillHtml = skillMarkup.replace('%skillName%', _skill.name);
+  skillHtml = skillHtml.replace('%skillNameLowercase%', _skill.name.toLowerCase());
+  skillHtml = skillHtml.replace('%projects%', skillprojs);
+  $.insertAdjacentHTML('beforeend',skillHtml);
+
 });
 
-$.insertAdjacentHTML('beforeend',skillsHTML);
