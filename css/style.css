@@ -1,23 +1,5 @@
 /*
-0 - 600Ppx:       Phone                     -> max width
-600 - 900px:      Tablet portrait           -> max width
-700 - 1000px:     Tablet landscape          -> max width
-1000 - 1600px:    where normal style goes
-1600px +:         Big desktop               -> min  width
-
-$breakpoint argument choice
-- phone
-- tab-port
-- tab-lands
-- big-desktop
-
-Order : Base + typography > general layout + grid > components
-
-1em = 16px
-*/
-/*
-
-
+// MEDIA QUERY MANAGER
 // breakpoint argument choice
 - bp-largest: 62.5em;         // 1000px
 - bp-large: 50em;             // 800px
@@ -209,7 +191,10 @@ body {
     fill: red; }
 
 .skill__group {
-  margin: 1rem 1rem; }
+  margin: 1rem 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around; }
   .skill__group > p {
     text-align: center;
     text-transform: uppercase;
@@ -218,13 +203,17 @@ body {
 .skill {
   display: flex;
   justify-content: center;
-  align-items: center;
-  margin-bottom: 2rem; }
+  align-items: center; }
   .skill__tag {
     flex-basis: 20%;
     display: flex;
-    justify-content: flex-end;
-    margin-right: 1rem; }
+    justify-content: flex-start; }
+    @media only screen and (max-width: 50em) {
+      .skill__tag {
+        flex-basis: 25%; } }
+    @media only screen and (max-width: 31.25em) {
+      .skill__tag {
+        flex-basis: 25%; } }
   .skill__level {
     flex: 1;
     height: 2.5rem;
@@ -287,9 +276,6 @@ body {
     transform: scale(1.1);
     filter: grayscale(100%);
     transition: all 0.2s; }
-    @media only screen and (hover: none) {
-      .avatar__photo {
-        filter: grayscale(0); } }
     @media only screen and (max-width: 31.25em) {
       .avatar__photo {
         width: 50%;
@@ -300,7 +286,22 @@ body {
         width: 70%;
         height: 70%;
         transform: scale(1); } }
+    @media only screen and (hover: none) {
+      .avatar__photo {
+        filter: grayscale(0); } }
     .avatar__photo:hover {
+      filter: grayscale(0%); }
+  .avatar__photo--circle {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    transform: scale(1.1);
+    filter: grayscale(100%);
+    transition: all 0.2s; }
+    @media only screen and (hover: none) {
+      .avatar__photo--circle {
+        filter: grayscale(0); } }
+    .avatar__photo--circle:hover {
       filter: grayscale(0%); }
 
 .container {
@@ -379,7 +380,7 @@ body {
     .portifolio {
       grid-template-rows: repeat(3, 1fr);
       grid-template-columns: repeat(2, 1fr); } }
-  @media only screen and (max-width: 37.5em) {
+  @media only screen and (max-width: 25em) {
     .portifolio {
       grid-template-rows: repeat(6, 1fr);
       grid-template-columns: repeat(1, 1fr);
@@ -441,6 +442,11 @@ body {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-areas: 'intro skill'; }
+  @media only screen and (max-width: 31.25em) {
+    .about {
+      grid-template-rows: 1fr 1fr;
+      grid-template-columns: 1fr;
+      grid-template-areas: 'intro'  'skill'; } }
 
 .presentation {
   display: flex;

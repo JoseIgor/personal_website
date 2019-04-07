@@ -5,6 +5,13 @@
   grid-template-columns: 1fr 1fr;
   grid-template-areas: 'intro skill';
 
+  @include respond(bp-small) {  
+    grid-template-rows: 1fr 1fr;  
+    grid-template-columns: 1fr;
+    grid-template-areas: 'intro' 
+                         'skill';
+  }
+
 }
 
 .presentation {
