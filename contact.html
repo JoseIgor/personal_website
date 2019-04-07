@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/normalize.css">
+
+    <link rel="shortcut icon" type="image/png" href="img/favicon.png">
+    
+    <title>Ze Igor</title>
+  </head>
+  <body>
+    <div class="container">
+      <nav class="navigation">
+        <ul class="menu">
+          <li class="menu__item"><a href="index.html" class="btn btn--white">Home</a></li>
+          <li class="menu__item"><a href="about.html" class="btn btn--white">About</a></li>
+          <li class="menu__item"><a href="#" class="btn btn--white">Contact</a></li>
+        </ul>
+      </nav>
+
+      <main class="contact">
+        
+        <form action="#" method="post" class="form">
+          <h3 class="form__name" >Contact me</h3>
+          <input class="form__input" type="text" name="name" id="name" placeholder="Name" required>
+          <input class="form__input" type="email" name="email" id="email" placeholder="Email" required>
+          <textarea class="form__input" name="message" id="message" cols="30" rows="10" placeholder="Message" required></textarea>
+          <button class="btn btn--black" type="submit">Send</button>
+        </form>
+      </main>
+      
+      <footer class="footer">
+        <div class="footer__copyright">
+          <span class="line"></span>
+          <span class="designer" >designed <i>by</i> Ze Igor</span>
+          <span class="line"></span>
+        </div>
+        <div class="footer__social-media">
+          <a href="https://www.linkedin.com/in/jos%C3%A9-igor-clementino-ferreira-moreira-05a656145/" target="_blank">
+            <svg class="footer__icon footer__icon--linkedin">
+                <use xlink:href="img/sprite.svg#icon-linkedin-with-circle"></use>
+            </svg>
+          </a>
+          <a href="https://github.com/JoseIgor" target="_blank">
+            <svg class="footer__icon footer__icon--github">
+              <use xlink:href="img/sprite.svg#icon-github"></use>
+            </svg>
+          </a>
+          <a href="#">
+            <svg class="footer__icon footer__icon--instagram">
+              <use xlink:href="img/sprite.svg#icon-instagram-with-circle"></use>
+            </svg>
+          </a>
+        </div>
+      </footer>
+
+    </div>
+  </body>
+</html>

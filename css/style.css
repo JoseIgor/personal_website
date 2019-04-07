@@ -116,18 +116,30 @@ body {
   font-weight: 700;
   text-decoration: none;
   text-transform: uppercase;
-  color: #353b48;
   cursor: pointer;
   padding: 0.5rem 3rem;
-  transition: all 0.2s; }
+  transition: all 0.2s;
+  border: none; }
 
-.btn:hover, .btn:active {
-  background-color: #353b48;
-  color: #fff; }
+.btn--white {
+  color: #353b48; }
+  .btn--white:hover, .btn--white:active {
+    background-color: #353b48;
+    color: #fff; }
+
+.btn--black {
+  color: #fff;
+  background-color: #1f232b; }
+  .btn--black:hover, .btn--black:active {
+    background-color: #b4bac8;
+    color: #353b48; }
 
 .btn:active {
   transform: translateY(1px);
   border-radius: 3px; }
+
+.btn:focus {
+  outline: none; }
 
 .card {
   position: relative;
@@ -313,6 +325,44 @@ body {
     .avatar__photo--circle:hover {
       filter: grayscale(0%); }
 
+.form {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  width: 70%;
+  margin: auto; }
+  .form__name {
+    align-self: flex-start;
+    margin: 2rem 0;
+    letter-spacing: 1px;
+    text-transform: uppercase; }
+  .form__input {
+    font-size: 1.5rem;
+    font-family: inherit;
+    color: inherit;
+    padding: 1.5rem 2rem;
+    border-radius: 2px;
+    background-color: #b4bac8;
+    border: none;
+    border-bottom: 3px solid transparent;
+    width: 100%;
+    display: block;
+    transition: all .3s; }
+    .form__input:not(:last-child) {
+      margin-bottom: 2rem; }
+    .form__input:focus {
+      outline: none;
+      box-shadow: 0 1rem 2rem rgba(53, 59, 72, 0.3);
+      border-bottom: 3px solid #353b48; }
+    .form__input:focus:invalid {
+      border-bottom: 3px solid #8d96ab; }
+    .form__input::-webkit-input-placeholder {
+      color: #1f232b; }
+  .form .btn {
+    align-self: flex-start;
+    padding: 1rem 5rem; }
+
 .container {
   display: grid;
   max-width: 1000px;
@@ -473,3 +523,6 @@ body {
       margin-bottom: 1rem; }
     .presentation > p:first-of-type {
       margin-top: 2rem; }
+
+.contact {
+  grid-area: main; }
