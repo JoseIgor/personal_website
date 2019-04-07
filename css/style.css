@@ -144,6 +144,16 @@ body {
     width: 100%;
     height: 100%;
     object-fit: cover; }
+  .card__coming {
+    width: 100%;
+    height: 100%;
+    background-color: #8d96ab;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+    .card__coming p {
+      text-transform: uppercase;
+      font-weight: 500; }
   .card__caption {
     position: absolute;
     bottom: 0;
@@ -295,7 +305,6 @@ body {
     display: inline-block;
     width: 100%;
     height: 100%;
-    transform: scale(1.1);
     filter: grayscale(100%);
     transition: all 0.2s; }
     @media only screen and (hover: none) {
@@ -454,6 +463,10 @@ body {
   justify-items: center;
   align-items: center;
   margin-right: 2rem; }
+  @media only screen and (max-width: 31.25em) {
+    .presentation {
+      margin-right: 0;
+      padding: 1rem 1rem; } }
   .presentation > p {
     text-align: justify; }
     .presentation > p:not(:last-of-type) {
