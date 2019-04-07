@@ -387,13 +387,6 @@ body {
   color: #fff;
   background: #353b48; }
 
-textarea,
-input[type="text"],
-input[type="button"],
-input[type="submit"] {
-  -webkit-appearance: none;
-  border-radius: 0; }
-
 /* ANIMATIONS */
 @keyframes dropDown {
   0% {
