@@ -8,7 +8,6 @@
     "build:analyze": "npm run build -- --env.addon=bundleanalyze --env.addon=bundlevisualizer",
     "server-test": "node node_modules/http-server/bin/http-server dist",
     "watch:sass": " node-sass sass/main.scss css/style.css -w",
-    "devserver": "live-server",
     "start-old": "npm-run-all --parallel devserver watch:sass",
     "compile:sass": "node-sass sass/main.scss css/style.comp.css",
     "concat:css": "concat -o css/style.concat.css css/normalize.css css/style.comp.css",
