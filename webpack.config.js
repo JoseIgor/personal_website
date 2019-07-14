@@ -1,4 +1,5 @@
 const path = require('path');
+const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 module.exports = {
@@ -25,12 +26,14 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(), // trackes unused files in the distribution folder and removes them
     //automatically replace the new genereted bundle in the index.html output
-    new HtmlWebpackPlugin({ template: 'src/assets/index.html' })
+    new HtmlWebpackPlugin({ template: 'src/assets/index.html' }),
+    new webpack.HotModuleReplacementPlugin()
   ],
   devtool: 'inline-source-map',
   devServer: {
     contentBase: './dist',
     inline: true,
+    hot: true,
     host: '0.0.0.0',
     port: 3000
   }
