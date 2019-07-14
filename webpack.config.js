@@ -2,7 +2,6 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 module.exports = {
-  mode: 'development',
   entry: {
     bundle: './src/index.js'
   },
@@ -11,6 +10,18 @@ module.exports = {
     filename: '[name].js',
     chunkFilename: '[name].js'
   },
+  module: {
+    rules: [
+      {
+        test: /.(js)$/,
+        exclude: [path.resolve(__dirname, 'node_modules')],
+        use: ['babel-loader']
+      }
+    ]
+  },
+  resolve: {
+    extensions: ['*', '.js']
+  },
   plugins: [
     new CleanWebpackPlugin(), // trackes unused files in the distribution folder and removes them
     //automatically replace the new genereted bundle in the index.html output
@@ -18,7 +29,7 @@ module.exports = {
   ],
   devtool: 'inline-source-map',
   devServer: {
-    contentBase: path.join('/dist/'),
+    contentBase: './dist',
     inline: true,
     host: '0.0.0.0',
     port: 3000

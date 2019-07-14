@@ -4,7 +4,7 @@
   "description": "Ze Igor Web Designer",
   "scripts": {
     "biuld": "webpack",
-    "start": "webpack-dev-server --open",
+    "start": "webpack-dev-server --open --mode development",
     "watch:sass": " node-sass sass/main.scss css/style.css -w",
     "devserver": "live-server",
     "start-old": "npm-run-all --parallel devserver watch:sass",

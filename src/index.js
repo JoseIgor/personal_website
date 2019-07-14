@@ -1,2 +1,2 @@
-import sum from './components/app.js';
-console.log('Test webpack configuration!' + sum(1, 1));
+import MathOp from './components/app.js';
+console.log('Test webpack configuration!' + MathOp.sum(51, 1));
