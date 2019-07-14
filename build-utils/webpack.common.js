@@ -16,6 +16,18 @@ module.exports = {
         test: /.(js|jsx)$/,
         exclude: [path.resolve(__dirname, '../', 'node_modules')],
         use: ['babel-loader']
+      },
+      {
+        test: /\.(css|scss)$/,
+        use: [
+          'style-loader', // creates style nodes from JS strings
+          'css-loader', // translates CSS into CommonJS
+          'sass-loader' // compiles Sass to CSS, using Node Sass by default
+        ]
+      },
+      {
+        test: /\.(png|svg|jpg|gif)$/,
+        use: ['file-loader']
       }
     ]
   },
@@ -26,7 +38,7 @@ module.exports = {
     new CleanWebpackPlugin(), // trackes unused files in the distribution folder and removes them
     //automatically replace the new genereted bundle in the index.html output
     new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, '../', 'src/assets/index.html')
+      template: path.resolve(__dirname, '../', 'assets/index.html')
     }),
     new webpack.HotModuleReplacementPlugin()
   ],
