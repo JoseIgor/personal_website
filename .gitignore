@@ -4,7 +4,7 @@
 node_modules
 
 # production folder
-dist
+# dist
 
 # enviroment varaibles files
 .env.development
