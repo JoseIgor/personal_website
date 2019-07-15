@@ -15,6 +15,18 @@ describe('Button', () => {
     expect(wrapper.text()).toBe('Button');
   });
 
+  it('should render buttons with default color', () => {
+    const wrapper = shallow(<Button>Default Button</Button>);
+
+    expect(wrapper.hasClass('btn--primary')).toBe(true);
+  });
+
+  it('should render buttons with other colors', () => {
+    const wrapper = shallow(<Button color='secondary'>Default Button</Button>);
+
+    expect(wrapper.hasClass('btn--secondary')).toBe(true);
+  });
+
   // it('should render custom element', () => {
   //   const Link = props => <a href="/home" {...props}>{props.children}</a>;
   //   const wrapper = mount(<Button tag={Link}>Home</Button>);

@@ -1,5 +1,7 @@
 import React from 'react';
 
+import Button from './Button/Button';
+
 import '../../assets/sass/main.scss';
 import avatar from '../../assets/img/avatar_zeigor_crop.jpg';
 import card1 from '../../assets/img/card-1.jpg';
@@ -14,19 +16,13 @@ const App = () => {
         <nav className='navigation'>
           <ul className='menu'>
             <li className='menu__item'>
-              <a href='#' className='btn btn--white'>
-                Home
-              </a>
+              <Button>Home</Button>
             </li>
             <li className='menu__item'>
-              <a href='about.html' className='btn btn--white'>
-                About
-              </a>
+              <Button>About</Button>
             </li>
             <li className='menu__item'>
-              <a href='contact.html' className='btn btn--white'>
-                Contact
-              </a>
+              <Button>Contact</Button>
             </li>
           </ul>
         </nav>
