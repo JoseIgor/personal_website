@@ -5,7 +5,7 @@ module.exports = {
   devtool: 'eval-source-map',
   plugins: [
     new Dotenv({
-      path: './.env.development'
+      path: '.env.development'
     })
   ]
 };
