@@ -6,11 +6,15 @@
   &:visited {
     display: inline-block;
     font-weight: 700;
+    font-size: $default-font-size;
     text-decoration: none;
     text-transform: uppercase;
     cursor: pointer;
-    padding: 0.5rem 3rem;
+    padding: 0.2rem 3rem;
     transition: all 0.2s;
+    border: none;
+    background-color: transparent;
+    line-height: inherit;
   }
 
   &--primary {

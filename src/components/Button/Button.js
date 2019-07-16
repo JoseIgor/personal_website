@@ -6,7 +6,8 @@ import './Button.scss';
 
 const propTypes = {
   children: PropTypes.node,
-  color: PropTypes.string
+  color: PropTypes.string,
+  href: PropTypes.string
 };
 
 const defaultProps = {
@@ -14,12 +15,16 @@ const defaultProps = {
   color: 'primary'
 };
 
-const Button = ({ color, children, className, ...attributes }) => {
+const Button = ({ color, children, className, href, ...attributes }) => {
   const classes = classNames('btn', `btn--${color}`);
+  let TAG = 'button';
+  if (href) {
+    TAG = 'a';
+  }
   return (
-    <a className={classes} {...attributes}>
+    <TAG className={classes} href={href} {...attributes}>
       {children}
-    </a>
+    </TAG>
   );
 };
 

@@ -27,25 +27,25 @@ describe('Button', () => {
     expect(wrapper.hasClass('btn--secondary')).toBe(true);
   });
 
+  it('should render an anchor element if href exists', () => {
+    const wrapper = mount(<Button href='/home'>Home</Button>);
+
+    expect(wrapper.find('a').hostNodes().length).toBe(1);
+    expect(wrapper.text()).toBe('Home');
+  });
+
+  it('should render a "button" by default if href does not exists', () => {
+    const wrapper = mount(<Button>Home</Button>);
+
+    expect(wrapper.find('button').hostNodes().length).toBe(1);
+    expect(wrapper.text()).toBe('Home');
+  });
+
   // it('should render custom element', () => {
   //   const Link = props => <a href="/home" {...props}>{props.children}</a>;
   //   const wrapper = mount(<Button tag={Link}>Home</Button>);
 
   //   expect(wrapper.find('a').hostNodes().length).toBe(1);
-  //   expect(wrapper.text()).toBe('Home');
-  // });
-
-  // it('should render an anchor element if href exists', () => {
-  //   const wrapper = mount(<Button href="/home">Home</Button>);
-
-  //   expect(wrapper.find('a').hostNodes().length).toBe(1);
-  //   expect(wrapper.text()).toBe('Home');
-  // });
-
-  // it('should render type as undefined by default when tag is "button"', () => {
-  //   const wrapper = mount(<Button>Home</Button>);
-
-  //   expect(wrapper.find('button').hostNodes().prop('type')).toBe(undefined);
   //   expect(wrapper.text()).toBe('Home');
   // });
 
